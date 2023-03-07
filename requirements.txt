@@ -1,0 +1,6 @@
+streamlit
+openai
+fitz
+PyMuPDF
+tensorflow_hub
+sklearn
