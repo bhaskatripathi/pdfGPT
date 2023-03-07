@@ -16,7 +16,7 @@ This pipeline allows users to input a URL to a PDF document, preprocess the text
 10. **Output**: The answer is outputted
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Input] -- URL --> B[Download PDF]
     A -- PDF --> C[Load PDF]
     B --> D[Load PDF]
@@ -25,4 +25,5 @@ flowchart LR
     F -- Query --> G[Get Top Results]
     G -- Generate Prompt --> H[Generate Answer]
     H -- Output --> I[Output]
+
 
