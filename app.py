@@ -191,9 +191,6 @@ import streamlit as st
 st.set_page_config(page_title='ChatGPT Theme', page_icon=':robot_face:', layout='wide',
                    initial_sidebar_state='collapsed')
 
-# Define title and description
-title = "Demo Title"
-description = "This is a demo description"
 
 # Define the app layout
 st.markdown(f'<center><h1>{title}</h1></center>', unsafe_allow_html=True)
