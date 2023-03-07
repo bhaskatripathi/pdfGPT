@@ -1,6 +1,6 @@
 streamlit
 openai
-fitz
 PyMuPDF
+fitz
 tensorflow_hub
 sklearn
