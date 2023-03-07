@@ -1,5 +1,6 @@
 streamlit
 openai
 PyMuPDF
+tensorflow
 tensorflow_hub
 sklearn
