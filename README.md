@@ -17,9 +17,9 @@ This pipeline allows users to input a URL to a PDF document, preprocess the text
 
 ```mermaid
 flowchart TB
-A[Input] -- URL --> B[Download PDF]
-A -- PDF --> C[Load PDF]
-B --> D[Load PDF]
+A[Input] --> B[URL]
+A -- Upload File manually --> C[Parse PDF]
+B --> D[Parse PDF] -- Preprocess --> E[Dynamic Text Chunks]
 C -- Preprocess --> E[Dynamic Text Chunks]
 E --Fit-->F[Semantic Search with Deep Averaging Network Encoder on each chunk]
 F -- Query --> G[Get Top Results]
