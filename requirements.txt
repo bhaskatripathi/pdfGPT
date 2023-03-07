@@ -3,4 +3,4 @@ openai
 PyMuPDF
 tensorflow
 tensorflow_hub
-sklearn
+scikit-learn
