@@ -187,12 +187,7 @@ description = "pdfGPT allows you to input a full pdf file and ask questions abou
 
 import streamlit as st
 
-# Set ChatGPT theme
-st.set_page_config(page_title='ChatGPT Theme', page_icon=':robot_face:', layout='wide',
-                   initial_sidebar_state='collapsed')
-
-
-# Define the app layout
+#Define the app layout
 st.markdown(f'<center><h1>{title}</h1></center>', unsafe_allow_html=True)
 st.markdown(description)
 
@@ -214,5 +209,3 @@ with col2:
 if btn:
     answer_value = question_answer(url, file, question)
     answer.value = answer_value
-    
-    
