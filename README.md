@@ -1,6 +1,7 @@
 # pdfGPT
 
 PDF Question Answering Pipeline
+Upload your PDF file and chat with it !! 
 This pipeline allows users to input a URL to a PDF document, preprocess the text, and use semantic search to generate answers to user questions. The pipeline follows the following steps:
 
 1. **Input**: User inputs a URL to a PDF document.
@@ -19,8 +20,8 @@ flowchart LR
     A[Input] -- URL --> B[Download PDF]
     A -- PDF --> C[Load PDF]
     B --> D[Load PDF]
-    C -- Preprocess --> E[Text Chunks]
-    E --Fit-->F[SemanticSearch]
+    C -- Preprocess --> E[Dynamic Text Chunks]
+    E --Fit-->F[SemanticSearch with Deep Averaging Network Encoder]
     F -- Query --> G[Get Top Results]
     G -- Generate Prompt --> H[Generate Answer]
     H -- Output --> I[Output]
