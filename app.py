@@ -4,10 +4,9 @@ import re
 import numpy as np
 import tensorflow_hub as hub
 import openai
-#import gradio as gr
+import gradio as gr
 import os
 from sklearn.neighbors import NearestNeighbors
-
 
 def download_pdf(url, output_path):
     urllib.request.urlretrieve(url, output_path)
@@ -89,7 +88,8 @@ class SemanticSearch:
             embeddings.append(emb_batch)
         embeddings = np.vstack(embeddings)
         return embeddings
-openai.api_key = "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"
+openai.api_key = os.getenv('Your_Key_Here') 
+
 recommender = SemanticSearch()
 
 
@@ -160,52 +160,55 @@ def question_answer(url, file, question):
     return generate_answer(question)
 
 
-title = 'pdfGPT'
-description = "pdfGPT allows you to input a full pdf file and ask questions about its contents. pdfGPT has ability to cite and refer to the specific page number from where the information was found. This adds credibility to the answers generated also helps you locate the relevant information in the pdf document."
+title = 'PDF GPT'
+description = """PDF GPT allows you to chat with a PDF file using GPT functionalities. The application intelligently breaks the document into smaller chunks and employs a powerful Deep Averaging Network Encoder to generate embeddings. To generate a summary for each chunk, PDF GPT utilizes Open AI as its data layer.
+PDF GPT uses a KNN algorithm to return the top-n embedding from each chunk and uses a custom logic to generate a response. 
+The application also leverages important document sections to generate precise responses, and 
+can even provide the page number where the information is located, adding credibility to the responses and helping to locate pertinent information quickly."""
 
-# with gr.Blocks() as demo:
+with gr.Blocks() as demo:
 
-#     gr.Markdown(f'<center><h1>{title}</h1></center>')
-#     gr.Markdown(description)
+    gr.Markdown(f'<center><h1>{title}</h1></center>')
+    gr.Markdown(description)
 
-#     with gr.Row():
+    with gr.Row():
         
-#         with gr.Group():
-#             url = gr.Textbox(label='URL')
-#             gr.Markdown("<center><h6>or<h6></center>")
-#             file = gr.File(label='PDF', file_types=['.pdf'])
-#             question = gr.Textbox(label='question')
-#             btn = gr.Button(value='Submit')
-#             btn.style(full_width=True)
+        with gr.Group():
+            url = gr.Textbox(label='URL')
+            gr.Markdown("<center><h6>or<h6></center>")
+            file = gr.File(label='PDF', file_types=['.pdf'])
+            question = gr.Textbox(label='Enter your question here')
+            btn = gr.Button(value='Submit')
+            btn.style(full_width=True)
 
-#         with gr.Group():
-#             answer = gr.Textbox(label='answer')
+        with gr.Group():
+            answer = gr.Textbox(label='The answer to your question is :')
 
-#         btn.click(question_answer, inputs=[url, file, question], outputs=[answer])
+        btn.click(question_answer, inputs=[url, file, question], outputs=[answer])
 
-# demo.launch(share=True)
+demo.launch()
 
-import streamlit as st
+# import streamlit as st
 
-#Define the app layout
-st.markdown(f'<center><h1>{title}</h1></center>', unsafe_allow_html=True)
-st.markdown(description)
+# #Define the app layout
+# st.markdown(f'<center><h1>{title}</h1></center>', unsafe_allow_html=True)
+# st.markdown(description)
 
-col1, col2 = st.columns(2)
+# col1, col2 = st.columns(2)
 
-# Define the inputs in the first column
-with col1:
-    url = st.text_input('URL')
-    st.markdown("<center><h6>or<h6></center>", unsafe_allow_html=True)
-    file = st.file_uploader('PDF', type='pdf')
-    question = st.text_input('question')
-    btn = st.button('Submit')
+# # Define the inputs in the first column
+# with col1:
+#     url = st.text_input('URL')
+#     st.markdown("<center><h6>or<h6></center>", unsafe_allow_html=True)
+#     file = st.file_uploader('PDF', type='pdf')
+#     question = st.text_input('question')
+#     btn = st.button('Submit')
 
-# Define the output in the second column
-with col2:
-    answer = st.text_input('answer')
+# # Define the output in the second column
+# with col2:
+#     answer = st.text_input('answer')
 
-# Define the button action
-if btn:
-    answer_value = question_answer(url, file, question)
-    answer.value = answer_value
+# # Define the button action
+# if btn:
+#     answer_value = question_answer(url, file, question)
+#     answer.value = answer_value
