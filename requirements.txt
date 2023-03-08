@@ -1,4 +1,4 @@
-PyMuPDF-1.20.0
+PyMuPDF
 numpy==1.19.5
 scikit-learn
 tensorflow-hub==0.12.0
