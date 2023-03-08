@@ -1,7 +1,10 @@
 
 # pdfGPT
-PDF Question Answering Pipeline
-Upload your PDF file and chat with it !! 
+What is PDF GPT ?
+1. PDF GPT allows you to chat with a PDF file using GPT functionalities.
+2. The application intelligently breaks the document into smaller chunks and employs a powerful Deep Averaging Network Encoder to generate embeddings.
+3. PDF GPT utilizes Open AI as its data layer to generate a summary for each chunk.
+4. PDF GPT uses a KNN algorithm to return the top-n embedding from each chunk and uses custom logic to generate a response. The application also leverages important document sections to generate precise responses, and can even provide the page number where the information is located, adding credibility to the responses and helping to locate pertinent information quickly.
 
 ### Demo
 Demo URL: https://huggingface.co/spaces/bhaskartripathi/pdfChatter
