@@ -1,4 +1,4 @@
-fitz==0.0.1.dev2
+PyMuPDF-1.20.0
 numpy==1.19.5
 scikit-learn
 tensorflow-hub==0.12.0
