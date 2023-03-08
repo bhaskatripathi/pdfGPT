@@ -1,5 +1,5 @@
 # pdfGPT
-
+Demo: https://huggingface.co/spaces/bhaskartripathi/pdfChatter
 PDF Question Answering Pipeline
 Upload your PDF file and chat with it !! 
 This pipeline allows users to input a URL to a PDF document, preprocess the text, and use semantic search to generate answers to user questions. The pipeline follows the following steps:
@@ -26,3 +26,5 @@ F -- Query --> G[Get Top Results]
 G -- K-Nearest Neighbour --> K[Get Nearest Neighbour - matching citation references]
 K -- Generate Prompt --> H[Generate Answer]
 H -- Output --> I[Output]
+
+
