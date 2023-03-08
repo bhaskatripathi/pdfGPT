@@ -1,6 +1,6 @@
-streamlit
-openai
-PyMuPDF
-tensorflow
-tensorflow_hub
-scikit-learn
+fitz==0.0.1.dev2
+numpy==1.19.5
+scikit-learn==0.22.2.post1
+tensorflow-hub==0.12.0
+openai==0.10.2
+
