@@ -161,10 +161,11 @@ def question_answer(url, file, question):
 
 
 title = 'PDF GPT'
-description = """PDF GPT allows you to chat with a PDF file using GPT functionalities. The application intelligently breaks the document into smaller chunks and employs a powerful Deep Averaging Network Encoder to generate embeddings. To generate a summary for each chunk, PDF GPT utilizes Open AI as its data layer.
-PDF GPT uses a KNN algorithm to return the top-n embedding from each chunk and uses a custom logic to generate a response. 
-The application also leverages important document sections to generate precise responses, and 
-can even provide the page number where the information is located, adding credibility to the responses and helping to locate pertinent information quickly."""
+description = """ What is PDF GPT ?
+1. PDF GPT allows you to chat with a PDF file using GPT functionalities. 
+2. The application intelligently breaks the document into smaller chunks and employs a powerful Deep Averaging Network Encoder to generate embeddings. 
+3. PDF GPT utilizes Open AI as its data layer to generate a summary for each chunk.
+4. PDF GPT uses a KNN algorithm to return the top-n embedding from each chunk and uses custom logic to generate a response. The application also leverages important document sections to generate precise responses, and can even provide the page number where the information is located, adding credibility to the responses and helping to locate pertinent information quickly."""
 
 with gr.Blocks() as demo:
 
@@ -174,9 +175,9 @@ with gr.Blocks() as demo:
     with gr.Row():
         
         with gr.Group():
-            url = gr.Textbox(label='URL')
-            gr.Markdown("<center><h6>or<h6></center>")
-            file = gr.File(label='PDF', file_types=['.pdf'])
+            url = gr.Textbox(label='Enter PDF URL here')
+            gr.Markdown("<center><h4>OR<h4></center>")
+            file = gr.File(label='Upload your PDF/ Research Paper / Book here', file_types=['.pdf'])
             question = gr.Textbox(label='Enter your question here')
             btn = gr.Button(value='Submit')
             btn.style(full_width=True)
@@ -187,6 +188,7 @@ with gr.Blocks() as demo:
         btn.click(question_answer, inputs=[url, file, question], outputs=[answer])
 
 demo.launch()
+
 
 # import streamlit as st
 
