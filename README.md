@@ -1,7 +1,12 @@
+
 # pdfGPT
-Demo: https://huggingface.co/spaces/bhaskartripathi/pdfChatter
 PDF Question Answering Pipeline
 Upload your PDF file and chat with it !! 
+
+### Demo
+Demo URL: https://huggingface.co/spaces/bhaskartripathi/pdfChatter
+
+### Description
 This pipeline allows users to input a URL to a PDF document, preprocess the text, and use semantic search to generate answers to user questions. The pipeline follows the following steps:
 
 1. **Input**: User inputs a URL to a PDF document.
