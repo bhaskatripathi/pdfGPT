@@ -23,8 +23,9 @@ This pipeline allows users to input a URL to a PDF document, preprocess the text
 9. **Generate Answer**: The pipeline generates an answer based on the top semantic search results.
 10. **Output**: The answer is outputted
 
-**NOTE**: Please star this project if oyu like it!
+**NOTE**: Please star this project if you like it!
 
+### Flowchart
 ```mermaid
 flowchart TB
 A[Input] --> B[URL]
