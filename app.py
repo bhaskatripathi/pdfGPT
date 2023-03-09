@@ -88,9 +88,7 @@ class SemanticSearch:
             embeddings.append(emb_batch)
         embeddings = np.vstack(embeddings)
         return embeddings
-openai.api_key = os.getenv('Your_Key_Here') 
 
-recommender = SemanticSearch()
 
 
 def load_recommender(path, start_page=1):
@@ -101,7 +99,8 @@ def load_recommender(path, start_page=1):
     return 'Corpus Loaded.'
 
 
-def generate_text(prompt, engine="text-davinci-003"):
+def generate_text(openAI_key,prompt, engine="text-davinci-003"):
+    openai.api_key = openAI_key
     completions = openai.Completion.create(
         engine=engine,
         prompt=prompt,
@@ -114,7 +113,7 @@ def generate_text(prompt, engine="text-davinci-003"):
     return message
 
 
-def generate_answer(question):
+def generate_answer(question,openAI_key):
     topn_chunks = recommender(question)
     prompt = ""
     prompt += 'search results:\n\n'
@@ -131,11 +130,13 @@ def generate_answer(question):
               "answer should be short and concise.\n\nQuery: {question}\nAnswer: "
     
     prompt += f"Query: {question}\nAnswer:"
-    answer = generate_text(prompt)
+    answer = generate_text(openAI_key, prompt,"text-davinci-003")
     return answer
 
 
-def question_answer(url, file, question):
+def question_answer(url, file, question,openAI_key):
+    if openAI_key.strip()=='':
+        return '[ERROR]: Please enter you Open AI Key. Get your key here : https://platform.openai.com/account/api-keys'
     if url.strip() == '' and file == None:
         return '[ERROR]: Both URL and PDF is empty. Provide atleast one.'
     
@@ -157,8 +158,10 @@ def question_answer(url, file, question):
     if question.strip() == '':
         return '[ERROR]: Question field is empty'
 
-    return generate_answer(question)
+    return generate_answer(question,openAI_key)
 
+
+recommender = SemanticSearch()
 
 title = 'PDF GPT'
 description = """ What is PDF GPT ?
@@ -175,6 +178,8 @@ with gr.Blocks() as demo:
     with gr.Row():
         
         with gr.Group():
+            gr.Markdown(f'<p style="text-align:center">Get your Open AI API key <a href="https://platform.openai.com/account/api-keys">here</a></p>')
+            openAI_key=gr.Textbox(label='Enter your OpenAI API key here')
             url = gr.Textbox(label='Enter PDF URL here')
             gr.Markdown("<center><h4>OR<h4></center>")
             file = gr.File(label='Upload your PDF/ Research Paper / Book here', file_types=['.pdf'])
@@ -185,8 +190,8 @@ with gr.Blocks() as demo:
         with gr.Group():
             answer = gr.Textbox(label='The answer to your question is :')
 
-        btn.click(question_answer, inputs=[url, file, question], outputs=[answer])
-
+        btn.click(question_answer, inputs=[url, file, question,openAI_key], outputs=[answer])
+#openai.api_key = os.getenv('Your_Key_Here') 
 demo.launch()
 
 
