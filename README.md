@@ -23,6 +23,8 @@ This pipeline allows users to input a URL to a PDF document, preprocess the text
 9. **Generate Answer**: The pipeline generates an answer based on the top semantic search results.
 10. **Output**: The answer is outputted
 
+**NOTE**: Please star this project if oyu like it!
+
 ```mermaid
 flowchart TB
 A[Input] --> B[URL]
@@ -35,4 +37,4 @@ G -- K-Nearest Neighbour --> K[Get Nearest Neighbour - matching citation referen
 K -- Generate Prompt --> H[Generate Answer]
 H -- Output --> I[Output]
 
-**NOTE**: Please star this project if oyu like it!
+
