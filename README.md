@@ -12,7 +12,7 @@
 4. A custom logic generates precise responses. The returned response can even cite the page number in square brackets([]) where the information is located, adding credibility to the responses and helping to locate pertinent information quickly. The Responses are much better than the naive responses by Open AI.
 
 ### Demo
-Demo URL: https://bhaskartripathi-pdfchatter.hf.space
+Demo URL: https://bit.ly/41ZXBJM
 
 **NOTE**: Please star this project if you like it!
 ### UML
