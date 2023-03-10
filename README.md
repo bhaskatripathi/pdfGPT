@@ -24,6 +24,28 @@ This pipeline allows users to input a URL to a PDF document, preprocess the text
 10. **Output**: The answer is outputted
 
 **NOTE**: Please star this project if you like it!
+### UML
+```mermaid
+sequenceDiagram
+    participant User
+    participant System
+
+    User->>System: Enter API Key
+    User->>System: Upload PDF/PDF URL
+    User->>System: Ask Question
+    User->>System: Submit Call to Action
+
+    System->>System: Blank field Validations
+    System->>System: Convert PDF to Text
+    System->>System: Decompose Text to Chunks (150 word length)
+    System->>System: Generate embeddings for each chunk with DAN
+    System->>System: Perform Semantic Search and return Top 5 Chunks with KNN
+    System->>System: Load Open AI prompt
+    System->>System: Embed Top 5 Chunks in Open AI Prompt
+    System->>System: Generate Answer with Davinci
+
+    System-->>User: Return Answer
+```
 
 ### Flowchart
 ```mermaid
@@ -37,5 +59,5 @@ F -- Query --> G[Get Top Results]
 G -- K-Nearest Neighbour --> K[Get Nearest Neighbour - matching citation references]
 K -- Generate Prompt --> H[Generate Answer]
 H -- Output --> I[Output]
-
+```
 
