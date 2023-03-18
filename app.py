@@ -91,12 +91,31 @@ class SemanticSearch:
 
 
 
+#def load_recommender(path, start_page=1):
+#    global recommender
+#   texts = pdf_to_text(path, start_page=start_page)
+#   chunks = text_to_chunks(texts, start_page=start_page)
+#    recommender.fit(chunks)
+#    return 'Corpus Loaded.'
+
+# The modified function generates embeddings based on PDF file name and page number and checks if the embeddings file exists before loading or generating it.	
 def load_recommender(path, start_page=1):
     global recommender
+    pdf_file = os.path.basename(path)
+    embeddings_file = f"{pdf_file}_{start_page}.npy"
+    
+    if os.path.isfile(embeddings_file):
+        embeddings = np.load(embeddings_file)
+        recommender.embeddings = embeddings
+        recommender.fitted = True
+        return "Embeddings loaded from file"
+    
     texts = pdf_to_text(path, start_page=start_page)
     chunks = text_to_chunks(texts, start_page=start_page)
     recommender.fit(chunks)
+    np.save(embeddings_file, recommender.embeddings)
     return 'Corpus Loaded.'
+
 
 
 def generate_text(openAI_key,prompt, engine="text-davinci-003"):
