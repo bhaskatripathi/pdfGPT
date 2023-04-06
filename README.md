@@ -4,7 +4,7 @@
 1. When you pass a large text to Open AI, it suffers from a 4K token limit. It cannot take an entire pdf file as an input
 2. Open AI sometimes becomes overtly chatty and returns irrelevant response not directly related to your query. This is because Open AI uses poor embeddings.
 3. ChatGPT cannot directly talk to external data. 
-4. There are a number of solutions like https://www.chatpdf.com, https://www.bespacific.com/chat-with-any-pdf/, filechat.io but none of them is open source. In addition, their navigation is not just one step and to the point. Moreover, the content quality is not good due to usage of OpenAI embeddings which are not very good.
+4. There are a number of solutions like https://www.chatpdf.com, https://www.bespacific.com/chat-with-any-pdf/, filechat.io they have poor content quality and are prone to hallucination problem. One good way to avoid hallucinations and improve truthfulness is to use improved embeddings. One good solution is to use improved embeddings with Universal Sentence Encoder family of algorithms (Read more here: https://tfhub.dev/google/collections/universal-sentence-encoder/1). 
 
 ### Solution: What is PDF GPT ?
 1. PDF GPT allows you to chat with an uploaded PDF file using GPT functionalities.
