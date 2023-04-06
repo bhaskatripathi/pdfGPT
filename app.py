@@ -130,7 +130,22 @@ def generate_text(openAI_key,prompt, engine="text-davinci-003"):
     )
     message = completions.choices[0].text
     return message
-
+    
+def generate_text2(openAI_key, prompt, engine="gpt-3.5-turbo-0301"):
+    openai.api_key = openAI_key
+    messages = [{'role': 'system', 'content': 'You are a helpful assistant.'},
+                {'role': 'user', 'content': prompt}]
+    
+    completions = openai.ChatCompletion.create(
+        model=engine,
+        messages=messages,
+        max_tokens=512,
+        n=1,
+        stop=None,
+        temperature=0.7,
+    )
+    message = completions.choices[0].message['content']
+    return message
 
 def generate_answer(question,openAI_key):
     topn_chunks = recommender(question)
@@ -140,13 +155,13 @@ def generate_answer(question,openAI_key):
         prompt += c + '\n\n'
         
     prompt += "Instructions: Compose a comprehensive reply to the query using the search results given. "\
-              "Cite each reference using [number] notation (every result has this number at the beginning). "\
+              "Cite each reference using [ Page Number] notation (every result has this number at the beginning). "\
               "Citation should be done at the end of each sentence. If the search results mention multiple subjects "\
               "with the same name, create separate answers for each. Only include information found in the results and "\
               "don't add any additional information. Make sure the answer is correct and don't output false content. "\
-              "If the text does not relate to the query, simply state 'Found Nothing'. Ignore outlier "\
+              "If the text does not relate to the query, simply state 'Text Not Found in PDF'. Ignore outlier "\
               "search results which has nothing to do with the question. Only answer what is asked. The "\
-              "answer should be short and concise.\n\nQuery: {question}\nAnswer: "
+              "answer should be short and concise. Answer step-by-step. \n\nQuery: {question}\nAnswer: "
     
     prompt += f"Query: {question}\nAnswer:"
     answer = generate_text(openAI_key, prompt,"text-davinci-003")
