@@ -54,4 +54,7 @@ G -- K-Nearest Neighbour --> K[Get Nearest Neighbour - matching citation referen
 K -- Generate Prompt --> H[Generate Answer]
 H -- Output --> I[Output]
 ```
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=bhaskatripathi/pdfGPT&type=Date)](https://star-history.com/#bhaskatripathi/pdfGPT&Date)
 
