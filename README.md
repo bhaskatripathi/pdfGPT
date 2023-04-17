@@ -11,6 +11,7 @@
 2. The application intelligently breaks the document into smaller chunks and employs a powerful Deep Averaging Network Encoder to generate embeddings.
 3. A semantic search is first performed on your pdf content and the most relevant embeddings are passed to the Open AI.
 4. A custom logic generates precise responses. The returned response can even cite the page number in square brackets([]) where the information is located, adding credibility to the responses and helping to locate pertinent information quickly. The Responses are much better than the naive responses by Open AI.
+5. Andrej Karpath mentioned in this post that KNN algorithm is most appropriate for similar problems: https://twitter.com/karpathy/status/1647025230546886658
 
 ### Demo
 Demo URL: https://bit.ly/41ZXBJM
