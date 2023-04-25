@@ -1,3 +1,9 @@
+"""
+This module provides functions for working with PDF files and URLs. It uses the urllib.request library
+to download files from URLs, and the fitz library to extract text from PDF files. And GPT3 modules to generate
+text completions.
+"""
+
 import urllib.request
 import fitz
 import re
