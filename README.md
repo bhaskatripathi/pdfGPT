@@ -59,3 +59,8 @@ H -- Output --> I[Output]
 
 [![Star History Chart](https://api.star-history.com/svg?repos=bhaskatripathi/pdfGPT&type=Date)](https://star-history.com/#bhaskatripathi/pdfGPT&Date)
 
+## Also Try:
+This app creates schematic architecture diagrams, UML, flowcharts, Gnatt charts and many more with natural language.
+https://github.com/bhaskatripathi/Text2Diagram
+
+
