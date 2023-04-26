@@ -178,7 +178,7 @@ with gr.Blocks() as demo:
         
         with gr.Group():
             gr.Markdown(f'<p style="text-align:center">Get your Open AI API key <a href="https://platform.openai.com/account/api-keys">here</a></p>')
-            openAI_key=gr.Textbox(label='Enter your OpenAI API key here')
+            openAI_key=gr.Textbox(label='Enter your OpenAI API key here', type="password")
             url = gr.Textbox(label='Enter PDF URL here')
             gr.Markdown("<center><h4>OR<h4></center>")
             file = gr.File(label='Upload your PDF/ Research Paper / Book here', file_types=['.pdf'])
