@@ -1,7 +1,7 @@
 PyMuPDF
-numpy==1.19.5
+numpy==1.21.2
 scikit-learn
-tensorflow>=2.0.0
+tensorflow>=2.8.0
 tensorflow-hub
 openai==0.10.2
 gradio
