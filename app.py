@@ -54,10 +54,9 @@ def text_to_chunks(texts, word_length=150, start_page=1):
                 text_toks[idx+1] = chunk + text_toks[idx+1]
                 continue
             chunk = ' '.join(chunk).strip()
-            chunk = f'[{idx+start_page}]' + ' ' + '"' + chunk + '"'
+            chunk = f'[Page no. {idx+start_page}]' + ' ' + '"' + chunk + '"'
             chunks.append(chunk)
     return chunks
-
 
 class SemanticSearch:
     
@@ -137,14 +136,14 @@ def generate_answer(question,openAI_key):
     return answer
 
 
-def question_answer(url, file, question,openAI_key):
-    if openAI_key.strip()=='':
-        return '[ERROR]: Please enter you Open AI Key. Get your key here : https://platform.openai.com/account/api-keys'
-    if url.strip() == '' and file == None:
-        return '[ERROR]: Both URL and PDF is empty. Provide atleast one.'
-    
-    if url.strip() != '' and file != None:
-        return '[ERROR]: Both URL and PDF is provided. Please provide only one (eiter URL or PDF).'
+def question_answer(url, file, question, openAI_key):
+    if openAI_key.strip() == '':
+        return '[ERROR]: Please enter your Open AI Key. Get your key here : https://platform.openai.com/account/api-keys'
+    if url.strip() == '' and (file is None or file.size == 0):
+        return '[ERROR]: Both URL and PDF is empty. Provide at least one.'
+
+    if url.strip() != '' and (file is not None and file.size != 0):
+        return '[ERROR]: Both URL and PDF is provided. Please provide only one (either URL or PDF).'
 
     if url.strip() != '':
         glob_url = url
@@ -152,6 +151,9 @@ def question_answer(url, file, question,openAI_key):
         load_recommender('corpus.pdf')
 
     else:
+        if file.size == 0:
+            return '[ERROR]: The uploaded file is empty. Please provide a non-empty PDF file.'
+
         old_file_name = file.name
         file_name = file.name
         file_name = file_name[:-12] + file_name[-4:]
@@ -161,7 +163,8 @@ def question_answer(url, file, question,openAI_key):
     if question.strip() == '':
         return '[ERROR]: Question field is empty'
 
-    return generate_answer(question,openAI_key)
+    return generate_answer(question, openAI_key)
+
 
 
 recommender = SemanticSearch()
@@ -189,7 +192,6 @@ with gr.Blocks() as demo:
         with gr.Group():
             answer = gr.Textbox(label='The answer to your question is :')
 
-        btn.click(question_answer, inputs=[url, file, question,openAI_key], outputs=[answer])
+        btn.click(question_answer, inputs=[url, file, question,openAI_key], outputs=[answer],api_name="pdfGPTAPI")
 #openai.api_key = os.getenv('Your_Key_Here') 
 demo.launch()
-
