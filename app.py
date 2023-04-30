@@ -137,33 +137,38 @@ def generate_answer(question,openAI_key):
 
 
 def question_answer(url, file, question, openAI_key):
-    if openAI_key.strip() == '':
-        return '[ERROR]: Please enter your Open AI Key. Get your key here : https://platform.openai.com/account/api-keys'
-    if url.strip() == '' and (file is None or file.size == 0):
-        return '[ERROR]: Both URL and PDF is empty. Provide at least one.'
+    try:
+        if openAI_key.strip() == '':
+            return '[ERROR]: Please enter your Open AI Key. Get your key here : https://platform.openai.com/account/api-keys'
+        if url.strip() == '' and (file is None or file.size == 0):
+            return '[ERROR]: Both URL and PDF is empty. Provide at least one.'
 
-    if url.strip() != '' and (file is not None and file.size != 0):
-        return '[ERROR]: Both URL and PDF is provided. Please provide only one (either URL or PDF).'
+        if url.strip() != '' and (file is not None and file.size != 0):
+            return '[ERROR]: Both URL and PDF is provided. Please provide only one (either URL or PDF).'
 
-    if url.strip() != '':
-        glob_url = url
-        download_pdf(glob_url, 'corpus.pdf')
-        load_recommender('corpus.pdf')
+        if url.strip() != '':
+            glob_url = url
+            download_pdf(glob_url, 'corpus.pdf')
+            load_recommender('corpus.pdf')
 
-    else:
-        if file.size == 0:
-            return '[ERROR]: The uploaded file is empty. Please provide a non-empty PDF file.'
+        else:
+            if file.size == 0:
+                return '[ERROR]: The uploaded file is empty. Please provide a non-empty PDF file.'
 
-        old_file_name = file.name
-        file_name = file.name
-        file_name = file_name[:-12] + file_name[-4:]
-        os.rename(old_file_name, file_name)
-        load_recommender(file_name)
+            old_file_name = file.name
+            file_name = file.name
+            file_name = file_name[:-12] + file_name[-4:]
+            os.rename(old_file_name, file_name)
+            load_recommender(file_name)
 
-    if question.strip() == '':
-        return '[ERROR]: Question field is empty'
+        if question.strip() == '':
+            return '[ERROR]: Question field is empty'
 
-    return generate_answer(question, openAI_key)
+        return generate_answer(question, openAI_key)
+
+    except Exception as e:
+        return f'[ERROR]: An unexpected error occurred: {str(e)}'
+
 
 
 
