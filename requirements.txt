@@ -1,5 +1,5 @@
 PyMuPDF
-numpy==1.19.5
+numpy
 scikit-learn
 tensorflow>=2.0.0
 tensorflow-hub

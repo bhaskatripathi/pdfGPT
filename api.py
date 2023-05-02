@@ -25,10 +25,7 @@ def preprocess(text):
 
 
 def pdf_to_text(path, start_page=1, end_page=None):
-    print(f'Converting {path} to text ...')
     doc = fitz.open(path)
-
-    print(f'Number of pages: {doc.page_count}')
     total_pages = doc.page_count
 
     if end_page is None:
