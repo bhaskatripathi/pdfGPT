@@ -69,6 +69,8 @@ curl -X 'POST' \
     "OPENAI_API_KEY": "'"${OPENAI_API_KEY}"'"
     }
 }'
+
+{"result":" Room rent is subject to a maximum of INR 5,000 per day as specified in the Arogya Sanjeevani Policy [Page no. 1].","error":"","stdout":""}
 ```
 
 **PDF file**
@@ -79,6 +81,8 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: multipart/form-data' \
   -F 'file=@Arogya_Sanjeevani_Policy_CIS_2.pdf;type=application/pdf'
+
+{"result":" Room rent is subject to a maximum of INR 5,000 per day as specified in the Arogya Sanjeevani Policy [Page no. 1].","error":"","stdout":""}
 ```
 
 
