@@ -20,7 +20,7 @@ Demo URL: https://bit.ly/41ZXBJM
 
 ### How to use it?
 
-1. Run `lc-serve deploy local api` on one terminal.
+1. Run `lc-serve deploy local api` on one terminal to expose the app as API using langchain-serve.
 2. Run `python app.py` on another terminal.
 3. Open `http://localhost:7860` on your browser and interact with the app.
 4. Deploy the app on Cloud using `lc-serve deploy jcloud api` & share your app with the world.
@@ -43,6 +43,8 @@ Demo URL: https://bit.ly/41ZXBJM
     ╰──────────────┴──────────────────────────────────────────────────────────────────────────────────────╯
     ```
     </details>
+
+Read more about **langchain-serve** [here](https://github.com/jina-ai/langchain-serve).
 
 ### UML
 ```mermaid
