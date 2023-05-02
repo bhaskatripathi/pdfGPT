@@ -56,6 +56,8 @@ Make `pdfGPT` production ready by deploying it on [Jina Cloud](https://cloud.jin
 
 #### Interact using cURL
 
+(Change the URL to your own endpoint)
+
 **PDF url**
 ```bash
 curl -X 'POST' \
