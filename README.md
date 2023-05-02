@@ -12,41 +12,81 @@
 3. A semantic search is first performed on your pdf content and the most relevant embeddings are passed to the Open AI.
 4. A custom logic generates precise responses. The returned response can even cite the page number in square brackets([]) where the information is located, adding credibility to the responses and helping to locate pertinent information quickly. The Responses are much better than the naive responses by Open AI.
 5. Andrej Karpathy mentioned in this post that KNN algorithm is most appropriate for similar problems: https://twitter.com/karpathy/status/1647025230546886658
+6. Enables APIs on Production using **[langchain-serve](https://github.com/jina-ai/langchain-serve)**.
 
 ### Demo
 Demo URL: https://bit.ly/41ZXBJM
 
 **NOTE**: Please star this project if you like it!
 
-### How to use it?
+## Use `pdfGPT` on Production using [langchain-serve](https://github.com/jina-ai/langchain-serve)
 
+#### Local playground
 1. Run `lc-serve deploy local api` on one terminal to expose the app as API using langchain-serve.
-2. Run `python app.py` on another terminal.
+2. Run `python app.py` on another terminal for a local gradio playground.
 3. Open `http://localhost:7860` on your browser and interact with the app.
-4. Deploy the app on Cloud using `lc-serve deploy jcloud api` & share your app with the world.
 
-    <details>
-    <summary>Show command output</summary>
 
-    ```text
-    ╭──────────────┬──────────────────────────────────────────────────────────────────────────────────────╮
-    │ App ID       │                                 langchain-3ff4ab2c9d                                 │
-    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
-    │ Phase        │                                       Serving                                        │
-    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
-    │ Endpoint     │                      https://langchain-3ff4ab2c9d.wolf.jina.ai                       │
-    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
-    │ App logs     │                               dashboards.wolf.jina.ai                                │
-    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
-    │ Swagger UI   │                    https://langchain-3ff4ab2c9d.wolf.jina.ai/docs                    │
-    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
-    │ OpenAPI JSON │                https://langchain-3ff4ab2c9d.wolf.jina.ai/openapi.json                │
-    ╰──────────────┴──────────────────────────────────────────────────────────────────────────────────────╯
-    ```
-    
-    </details>
+#### Cloud deployment
 
-Read more about **langchain-serve** [here](https://github.com/jina-ai/langchain-serve).
+Make `pdfGPT` production ready by deploying it on [Jina Cloud](https://cloud.jina.ai/).
+
+`lc-serve deploy jcloud api` 
+
+<details>
+<summary>Show command output</summary>
+
+```text
+╭──────────────┬──────────────────────────────────────────────────────────────────────────────────────╮
+│ App ID       │                                 langchain-3ff4ab2c9d                                 │
+├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+│ Phase        │                                       Serving                                        │
+├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+│ Endpoint     │                      https://langchain-3ff4ab2c9d.wolf.jina.ai                       │
+├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+│ App logs     │                               dashboards.wolf.jina.ai                                │
+├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+│ Swagger UI   │                    https://langchain-3ff4ab2c9d.wolf.jina.ai/docs                    │
+├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+│ OpenAPI JSON │                https://langchain-3ff4ab2c9d.wolf.jina.ai/openapi.json                │
+╰──────────────┴──────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+</details>
+
+#### Interact using cURL
+
+(Change the URL to your own endpoint)
+
+**PDF url**
+```bash
+curl -X 'POST' \
+  'https://langchain-3ff4ab2c9d.wolf.jina.ai/ask_url' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "url": "https://uiic.co.in/sites/default/files/uploads/downloadcenter/Arogya%20Sanjeevani%20Policy%20CIS_2.pdf",
+  "question": "What'\''s the cap on room rent?",
+  "envs": {
+    "OPENAI_API_KEY": "'"${OPENAI_API_KEY}"'"
+    }
+}'
+
+{"result":" Room rent is subject to a maximum of INR 5,000 per day as specified in the Arogya Sanjeevani Policy [Page no. 1].","error":"","stdout":""}
+```
+
+**PDF file**
+```bash
+QPARAMS=$(echo -n 'input_data='$(echo -n '{"question": "What'\''s the cap on room rent?", "envs": {"OPENAI_API_KEY": "'"${OPENAI_API_KEY}"'"}}' | jq -s -R -r @uri))
+curl -X 'POST' \
+  'https://langchain-3ff4ab2c9d.wolf.jina.ai/ask_file?'"${QPARAMS}" \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@Arogya_Sanjeevani_Policy_CIS_2.pdf;type=application/pdf'
+
+{"result":" Room rent is subject to a maximum of INR 5,000 per day as specified in the Arogya Sanjeevani Policy [Page no. 1].","error":"","stdout":""}
+```
+
 
 ### UML
 ```mermaid
