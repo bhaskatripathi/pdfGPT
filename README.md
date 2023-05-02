@@ -27,6 +27,7 @@ Demo URL: https://bit.ly/41ZXBJM
 
     <details>
     <summary>Show command output</summary>
+
     ```text
     ╭──────────────┬──────────────────────────────────────────────────────────────────────────────────────╮
     │ App ID       │                                 langchain-3ff4ab2c9d                                 │
@@ -42,6 +43,7 @@ Demo URL: https://bit.ly/41ZXBJM
     │ OpenAPI JSON │                https://langchain-3ff4ab2c9d.wolf.jina.ai/openapi.json                │
     ╰──────────────┴──────────────────────────────────────────────────────────────────────────────────────╯
     ```
+    
     </details>
 
 Read more about **langchain-serve** [here](https://github.com/jina-ai/langchain-serve).
