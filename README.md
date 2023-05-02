@@ -17,6 +17,37 @@
 Demo URL: https://bit.ly/41ZXBJM
 
 **NOTE**: Please star this project if you like it!
+
+### How to use it?
+
+1. Run `lc-serve deploy local api` on one terminal to expose the app as API using langchain-serve.
+2. Run `python app.py` on another terminal.
+3. Open `http://localhost:7860` on your browser and interact with the app.
+4. Deploy the app on Cloud using `lc-serve deploy jcloud api` & share your app with the world.
+
+    <details>
+    <summary>Show command output</summary>
+
+    ```text
+    ╭──────────────┬──────────────────────────────────────────────────────────────────────────────────────╮
+    │ App ID       │                                 langchain-3ff4ab2c9d                                 │
+    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+    │ Phase        │                                       Serving                                        │
+    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+    │ Endpoint     │                      https://langchain-3ff4ab2c9d.wolf.jina.ai                       │
+    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+    │ App logs     │                               dashboards.wolf.jina.ai                                │
+    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+    │ Swagger UI   │                    https://langchain-3ff4ab2c9d.wolf.jina.ai/docs                    │
+    ├──────────────┼──────────────────────────────────────────────────────────────────────────────────────┤
+    │ OpenAPI JSON │                https://langchain-3ff4ab2c9d.wolf.jina.ai/openapi.json                │
+    ╰──────────────┴──────────────────────────────────────────────────────────────────────────────────────╯
+    ```
+    
+    </details>
+
+Read more about **langchain-serve** [here](https://github.com/jina-ai/langchain-serve).
+
 ### UML
 ```mermaid
 sequenceDiagram
