@@ -19,6 +19,10 @@ Demo URL: https://bit.ly/41ZXBJM
 
 **NOTE**: Please star this project if you like it!
 
+### Docker
+Run this commonad: 
+`docker-compose -f docker-compose.yaml up`
+
 ## Use `pdfGPT` on Production using [langchain-serve](https://github.com/jina-ai/langchain-serve)
 
 #### Local playground

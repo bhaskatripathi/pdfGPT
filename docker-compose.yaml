@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  langchain-serve:
+    build:
+      context: . 
+      target: langchain-serve-img
+    ports:
+      - '8080:8080'
+  pdf-gpt:
+    build:
+      context: . 
+      target: pdf-gpt-img
+    ports:
+      - '7860:7860'
