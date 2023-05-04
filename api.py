@@ -14,6 +14,9 @@ from lcserve import serving
 from sklearn.neighbors import NearestNeighbors
 
 
+recommender = None
+
+
 def download_pdf(url, output_path):
     urllib.request.urlretrieve(url, output_path)
 
@@ -97,6 +100,9 @@ class SemanticSearch:
 
 def load_recommender(path, start_page=1):
     global recommender
+    if recommender is None:
+        recommender = SemanticSearch()
+
     texts = pdf_to_text(path, start_page=start_page)
     chunks = text_to_chunks(texts, start_page=start_page)
     recommender.fit(chunks)
@@ -138,9 +144,6 @@ def generate_answer(question, openAI_key):
     prompt += f"Query: {question}\nAnswer:"
     answer = generate_text(openAI_key, prompt, "text-davinci-003")
     return answer
-
-
-recommender = SemanticSearch()
 
 
 def load_openai_key() -> str:
