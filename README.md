@@ -98,7 +98,7 @@ curl -X 'POST' \
 docker pull registry.hf.space/bhaskartripathi-pdfchatter:latest
 ```
 2. Download the Universal Sentence Encoder locally to your project's root folder. This is important because otherwise, 915 MB will be downloaded at runtime everytime you run it.
-3. Download the encoder using this link: https://tfhub.dev/google/universal-sentence-encoder/4?tf-hub-format=compressed
+3. Download the encoder using this [link](https://tfhub.dev/google/universal-sentence-encoder/4?tf-hub-format=compressed).
 4. Extract the downloaded file and place it in your project's root folder as shown below:
 Root folder of your project
 └───Universal Sentence Encoder
