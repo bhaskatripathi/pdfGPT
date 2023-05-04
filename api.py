@@ -16,6 +16,9 @@ from sklearn.neighbors import NearestNeighbors
 # download pdf from given url
 
 
+recommender = None
+
+
 def download_pdf(url, output_path):
     urllib.request.urlretrieve(url, output_path)
 
@@ -117,6 +120,9 @@ class SemanticSearch:
 
 def load_recommender(path, start_page=1):
     global recommender
+    if recommender is None:
+        recommender = SemanticSearch()
+
     texts = pdf_to_text(path, start_page=start_page)
     chunks = text_to_chunks(texts, start_page=start_page)
     recommender.fit(chunks)
@@ -163,10 +169,12 @@ def generate_answer(question, openAI_key):
     return generate_text(openAI_key, prompt, "text-davinci-003")
 
 
+
 # global instance of semantic search
 recommender = SemanticSearch()
 
 # load openAI key
+
 
 
 def load_openai_key() -> str:

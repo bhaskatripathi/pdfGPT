@@ -23,6 +23,10 @@ Demo URL: https://bit.ly/41ZXBJM
 
 Please star this project if you like it!
 
+### Docker
+Run this commonad: 
+`docker-compose -f docker-compose.yaml up`
+
 ## Use `pdfGPT` on Production using [langchain-serve](https://github.com/jina-ai/langchain-serve)
 ### Local playground
 1. Run `lc-serve deploy local api` on one terminal to expose the app as API using langchain-serve.
@@ -88,6 +92,35 @@ curl -X 'POST' \
 {"result":" Room rent is subject to a maximum of INR 5,000 per day as specified in the Arogya Sanjeevani Policy [Page no. 1].","error":"","stdout":""}
 ```
 
+## Running on localhost
+### Credits : [Adithya S](https://github.com/200901002)
+1. Pull the image by entering the following command in your terminal or command prompt:
+```bash
+docker pull registry.hf.space/bhaskartripathi-pdfchatter:latest
+```
+2. Download the Universal Sentence Encoder locally to your project's root folder. This is important because otherwise, 915 MB will be downloaded at runtime everytime you run it.
+3. Download the encoder using this [link](https://tfhub.dev/google/universal-sentence-encoder/4?tf-hub-format=compressed).
+4. Extract the downloaded file and place it in your project's root folder as shown below:
+Root folder of your project
+└───Universal Sentence Encoder
+|   ├───assets
+|   └───variables
+|   └───saved_model.pb
+|
+└───app.py
+5. If you have downloaded it locally, replace the code on line 68 in the API file:
+```python
+self.use = hub.load('https://tfhub.dev/google/universal-sentence-encoder/4')
+```
+with:
+```python
+self.use = hub.load('./Universal Sentence Encoder/')
+```
+6. Now, To run PDF-GPT, enter the following command:
+
+```bash
+docker run -it -p 7860:7860 --platform=linux/amd64 registry.hf.space/bhaskartripathi-pdfchatter:latest python app.py
+```
 
 ## UML
 ```mermaid
