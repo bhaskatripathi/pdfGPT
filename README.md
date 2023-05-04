@@ -129,6 +129,7 @@ H -- Output --> I[Output]
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=bhaskatripathi/pdfGPT&type=Date)](https://star-history.com/#bhaskatripathi/pdfGPT&Date)
+I am looking for more contributors from the open source community who can take up backlog items voluntarily and maintain the application jointly with me.
 
 ## Also Try:
 This app creates schematic architecture diagrams, UML, flowcharts, Gantt charts and many more. You simple need to mention the usecase in natural language and it will create the desired diagram.
