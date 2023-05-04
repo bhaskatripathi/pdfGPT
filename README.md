@@ -110,7 +110,9 @@ Root folder of your project
 5. If you have downloaded it locally, replace the code on line 68 in the API file:
 ```python
 self.use = hub.load('https://tfhub.dev/google/universal-sentence-encoder/4')
+```
 with:
+```python
 self.use = hub.load('./Universal Sentence Encoder/')
 ```
 6. Now, To run PDF-GPT, enter the following command:
