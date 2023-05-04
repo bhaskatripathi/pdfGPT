@@ -49,7 +49,7 @@ def text_to_chunks(texts, word_length=150, start_page=1):
 
     for idx, words in enumerate(text_toks):
         for i in range(0, len(words), word_length):
-            chunk = words[i : i + word_length]
+            chunk = words[i: i + word_length]
             if (
                 (i + word_length) > len(words)
                 and (len(chunk) < word_length)
@@ -58,14 +58,15 @@ def text_to_chunks(texts, word_length=150, start_page=1):
                 text_toks[idx + 1] = chunk + text_toks[idx + 1]
                 continue
             chunk = ' '.join(chunk).strip()
-            chunk = f'[Page no. {idx+start_page}]' + ' ' + '"' + chunk + '"'
+            chunk = f'[Page no. {idx + start_page}] "{chunk}"'
             chunks.append(chunk)
     return chunks
 
 
 class SemanticSearch:
     def __init__(self):
-        self.use = hub.load('https://tfhub.dev/google/universal-sentence-encoder/4')
+        self.use = hub.load(
+            'https://tfhub.dev/google/universal-sentence-encoder/4')
         self.fitted = False
 
     def fit(self, data, batch=1000, n_neighbors=5):
@@ -80,19 +81,15 @@ class SemanticSearch:
         inp_emb = self.use([text])
         neighbors = self.nn.kneighbors(inp_emb, return_distance=False)[0]
 
-        if return_data:
-            return [self.data[i] for i in neighbors]
-        else:
-            return neighbors
+        return [self.data[i] for i in neighbors] if return_data else neighbors
 
     def get_text_embedding(self, texts, batch=1000):
         embeddings = []
         for i in range(0, len(texts), batch):
-            text_batch = texts[i : (i + batch)]
+            text_batch = texts[i: (i + batch)]
             emb_batch = self.use(text_batch)
             embeddings.append(emb_batch)
-        embeddings = np.vstack(embeddings)
-        return embeddings
+        return np.vstack(embeddings)
 
 
 def load_recommender(path, start_page=1):
@@ -113,14 +110,12 @@ def generate_text(openAI_key, prompt, engine="text-davinci-003"):
         stop=None,
         temperature=0.7,
     )
-    message = completions.choices[0].text
-    return message
+    return completions.choices[0].text
 
 
 def generate_answer(question, openAI_key):
     topn_chunks = recommender(question)
-    prompt = ""
-    prompt += 'search results:\n\n'
+    prompt = "" + 'search results:\n\n'
     for c in topn_chunks:
         prompt += c + '\n\n'
 
@@ -136,8 +131,7 @@ def generate_answer(question, openAI_key):
     )
 
     prompt += f"Query: {question}\nAnswer:"
-    answer = generate_text(openAI_key, prompt, "text-davinci-003")
-    return answer
+    return generate_text(openAI_key, prompt, "text-davinci-003")
 
 
 recommender = SemanticSearch()
