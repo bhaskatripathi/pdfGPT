@@ -89,4 +89,6 @@ with gr.Blocks() as demo:
             outputs=[answer],
         )
 
-demo.launch(server_port=7860)
+demo.app.server.timeout = 60000 # Set the maximum return time for the results of accessing the upstream server
+
+demo.launch(server_port=7860, enable_queue=True) # `enable_queue=True` to ensure the validity of multi-user requests
