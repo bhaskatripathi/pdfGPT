@@ -1,4 +1,5 @@
 PyMuPDF
+fitz
 numpy
 scikit-learn
 tensorflow>=2.0.0
