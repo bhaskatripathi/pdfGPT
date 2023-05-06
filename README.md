@@ -21,8 +21,8 @@
 **NOTE**: Please star this project if you like it!
 
 ### Docker
-Run this commonad: 
-`docker-compose -f docker-compose.yaml up`
+Run `docker-compose -f docker-compose.yaml up` to use it with Docker compose.
+
 
 ## Use `pdfGPT` on Production using [langchain-serve](https://github.com/jina-ai/langchain-serve)
 
