@@ -15,8 +15,8 @@
 6. Enables APIs on Production using **[langchain-serve](https://github.com/jina-ai/langchain-serve)**.
 
 ### Demo
-Demo URL: https://bit.ly/41ZXBJM
-Original Source code : https://huggingface.co/spaces/bhaskartripathi/pdfChatter/blob/main/app.py
+1. Demo URL: https://bit.ly/41ZXBJM
+2. Original Source code : https://huggingface.co/spaces/bhaskartripathi/pdfChatter/blob/main/app.py
 
 **NOTE**: Please star this project if you like it!
 
