@@ -16,6 +16,7 @@
 
 ### Demo
 Demo URL: https://bit.ly/41ZXBJM
+Original Source code : https://huggingface.co/spaces/bhaskartripathi/pdfChatter/blob/main/app.py
 
 **NOTE**: Please star this project if you like it!
 
