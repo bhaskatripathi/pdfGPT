@@ -1,8 +1,15 @@
-PyMuPDF
-numpy
-scikit-learn
-tensorflow>=2.0.0
-tensorflow-hub
-openai==0.10.2
-gradio
+# Machine learning libraries
+numpy>=1.17.0
+scikit-learn>=0.22.0
+tensorflow-macos>=2.0.0,<3.0.0
+tensorflow-hub>=0.9.0,<1.0.0
+
+# Natural language processing libraries
+PyMuPDF>=1.18.13
+openai>=0.10.2,<0.11
+
+# User interface library
+gradio>=1.4.0
+
+# Language detection server
 langchain-serve>=0.0.19
