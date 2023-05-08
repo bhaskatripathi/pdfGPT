@@ -105,6 +105,7 @@ with gr.Blocks() as demo:
             btn = gr.Button(value="Submit")
             btn.style(full_width=True)
 
+
         # Add another group for the output area where the answer will be shown
         with gr.Group():
             answer = gr.Textbox(label="The answer to your question is :")

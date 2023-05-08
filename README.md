@@ -18,14 +18,16 @@ To solve these problems, improved embeddings are generated with the Universal Se
 5. According to a tweet by Andrej Karpathy (https://twitter.com/karpathy/status/1647025230546886658), KNN algorithm is most appropriate for similar problems.
 6. Enables APIs on Production using **[langchain-serve](https://github.com/jina-ai/langchain-serve)**.
 
-## Demo
-Demo URL: https://bit.ly/41ZXBJM
+### Demo
+1. **Demo URL**: https://bit.ly/41ZXBJM
+2. **Original Source code** (for demo hosted in Hugging Face) : https://huggingface.co/spaces/bhaskartripathi/pdfChatter/blob/main/app.py
+
 
 Please star this project if you like it!
 
 ### Docker
-Run this commonad: 
-`docker-compose -f docker-compose.yaml up`
+Run `docker-compose -f docker-compose.yaml up` to use it with Docker compose.
+
 
 ## Use `pdfGPT` on Production using [langchain-serve](https://github.com/jina-ai/langchain-serve)
 ### Local playground
@@ -101,6 +103,7 @@ docker pull registry.hf.space/bhaskartripathi-pdfchatter:latest
 2. Download the Universal Sentence Encoder locally to your project's root folder. This is important because otherwise, 915 MB will be downloaded at runtime everytime you run it.
 3. Download the encoder using this [link](https://tfhub.dev/google/universal-sentence-encoder/4?tf-hub-format=compressed).
 4. Extract the downloaded file and place it in your project's root folder as shown below:
+```text
 Root folder of your project
 └───Universal Sentence Encoder
 |   ├───assets
@@ -108,6 +111,7 @@ Root folder of your project
 |   └───saved_model.pb
 |
 └───app.py
+```
 5. If you have downloaded it locally, replace the code on line 68 in the API file:
 ```python
 self.use = hub.load('https://tfhub.dev/google/universal-sentence-encoder/4')
