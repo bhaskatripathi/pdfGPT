@@ -1,7 +1,6 @@
 # pdfGPT
 ## Demo
 1. **Demo URL**: https://bit.ly/41ZXBJM
-2. **Original Source code** (for demo hosted in Hugging Face) : https://huggingface.co/spaces/bhaskartripathi/pdfChatter/blob/main/app.py
 
 **NOTE**: Please star this project if you like it!
 
@@ -122,6 +121,8 @@ self.use = hub.load('./Universal Sentence Encoder/')
 ```bash
 docker run -it -p 7860:7860 --platform=linux/amd64 registry.hf.space/bhaskartripathi-pdfchatter:latest python app.py
 ```
+### **Original Source code** (for demo hosted in Hugging Face) : https://huggingface.co/spaces/bhaskartripathi/pdfChatter/blob/main/app.py
+
 
 ## UML
 ```mermaid
