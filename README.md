@@ -1,5 +1,10 @@
-
 # pdfGPT
+## Demo
+1. **Demo URL**: https://bit.ly/41ZXBJM
+2. **Original Source code** (for demo hosted in Hugging Face) : https://huggingface.co/spaces/bhaskartripathi/pdfChatter/blob/main/app.py
+
+**NOTE**: Please star this project if you like it!
+
 ### Problem Description : 
 1. When you pass a large text to Open AI, it suffers from a 4K token limit. It cannot take an entire pdf file as an input
 2. Open AI sometimes becomes overtly chatty and returns irrelevant response not directly related to your query. This is because Open AI uses poor embeddings.
@@ -13,12 +18,6 @@
 4. A custom logic generates precise responses. The returned response can even cite the page number in square brackets([]) where the information is located, adding credibility to the responses and helping to locate pertinent information quickly. The Responses are much better than the naive responses by Open AI.
 5. Andrej Karpathy mentioned in this post that KNN algorithm is most appropriate for similar problems: https://twitter.com/karpathy/status/1647025230546886658
 6. Enables APIs on Production using **[langchain-serve](https://github.com/jina-ai/langchain-serve)**.
-
-### Demo
-1. **Demo URL**: https://bit.ly/41ZXBJM
-2. **Original Source code** (for demo hosted in Hugging Face) : https://huggingface.co/spaces/bhaskartripathi/pdfChatter/blob/main/app.py
-
-**NOTE**: Please star this project if you like it!
 
 ### Docker
 Run `docker-compose -f docker-compose.yaml up` to use it with Docker compose.
