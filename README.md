@@ -171,4 +171,6 @@ I am looking for more contributors from the open source community who can take u
 This app creates schematic architecture diagrams, UML, flowcharts, Gantt charts and many more. You simple need to mention the usecase in natural language and it will create the desired diagram.
 https://github.com/bhaskatripathi/Text2Diagram
 
+## License
+This project is licensed under the MIT License. See the [LICENSE.txt](LICENSE.txt) file for details.
 
