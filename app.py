@@ -66,7 +66,7 @@ with gr.Blocks() as demo:
                 placeholder='http://localhost:8080',
             )
             gr.Markdown(
-                f'<p style="text-align:center">Get your Open AI API key <a href="https://platform.openai.com/account/api-keys">here</a></p>'
+                '<p style="text-align:center">Get your Open AI API key <a href="https://platform.openai.com/account/api-keys">here</a></p>'
             )
             openAI_key = gr.Textbox(
                 label='Enter your OpenAI API key here', type='password'
