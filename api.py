@@ -47,7 +47,6 @@ def pdf_to_text(path, start_page=1, end_page=None):
 
 def text_to_chunks(texts, word_length=150, start_page=1):
     text_toks = [t.split(' ') for t in texts]
-    page_nums = []
     chunks = []
 
     for idx, words in enumerate(text_toks):
