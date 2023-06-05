@@ -16,7 +16,7 @@ def ask_api(
         return '[ERROR]: Invalid API Host'
 
     if url.strip() == '' and file == None:
-        return '[ERROR]: Both URL and PDF is empty. Provide atleast one.'
+        return '[ERROR]: Both URL and PDF is empty. Provide at least one.'
 
     if url.strip() != '' and file != None:
         return '[ERROR]: Both URL and PDF is provided. Please provide only one (either URL or PDF).'
