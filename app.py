@@ -19,7 +19,7 @@ def ask_api(
         return '[ERROR]: Both URL and PDF is empty. Provide atleast one.'
 
     if url.strip() != '' and file != None:
-        return '[ERROR]: Both URL and PDF is provided. Please provide only one (eiter URL or PDF).'
+        return '[ERROR]: Both URL and PDF is provided. Please provide only one (either URL or PDF).'
 
     if question.strip() == '':
         return '[ERROR]: Question field is empty'
