@@ -110,16 +110,19 @@ def load_recommender(path, start_page=1):
 
 def generate_text(openAI_key, prompt, engine="text-davinci-003"):
     openai.api_key = openAI_key
-    completions = openai.Completion.create(
-        engine=engine,
-        prompt=prompt,
-        max_tokens=512,
-        n=1,
-        stop=None,
-        temperature=0.7,
-    )
-    message = completions.choices[0].text
-    return message
+    try:
+        completions = openai.Completion.create(
+            engine=engine,
+            prompt=prompt,
+            max_tokens=512,
+            n=1,
+            stop=None,
+            temperature=0.7,
+        )
+        message = completions.choices[0].text
+    except Exception as e:
+        message = f'API Error: {str(e)}'
+    return message 
 
 
 def generate_answer(question, openAI_key):
