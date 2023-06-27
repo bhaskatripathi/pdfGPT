@@ -1,6 +1,18 @@
 # pdfGPT
 ## Demo
 1. **Demo URL**: https://bit.ly/41ZXBJM
+========================================================================================================================
+## IMPORTANT NOTICE: 
+### **As of [June, 27, 2023], PDF-GPT has been deprecated and is no longer maintained or supported. For ongoing development, new features, or bug fixes, you are encouraged to fork this repository or work on a copy of the source code.**
+
+__PDF-GPT has garnered a significant amount of interest and support, and we're grateful for all the feedback and contributions. However, due to the ever-evolving nature of the project and the demands of maintaining it, we have made the difficult decision to deprecate the library.__
+__While we will no longer be providing updates or addressing issues, the codebase will remain available here on GitHub. You're welcome to use the code as a starting point for your own projects, or to modify it to suit your needs.__
+Thank you for your understanding and your support for PDF-GPT. We're excited to see what the community will create with it in the future.
+
+The original source code can be found at: https://huggingface.co/spaces/bhaskartripathi/pdfChatter
+
+## -Bhaskar Tripathi
+========================================================================================================================
 
 **NOTE**: Please star this project if you like it!
 
