@@ -2,12 +2,14 @@ version: '3'
 
 services:
   langchain-serve:
+    container_name: langchain-serve
     build:
       context: . 
       target: langchain-serve-img
     ports:
       - '8080:8080'
   pdf-gpt:
+    container_name: pdf-gpt
     build:
       context: . 
       target: pdf-gpt-img
