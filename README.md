@@ -179,9 +179,9 @@ H -- Output --> I[Output]
 [![Star History Chart](https://api.star-history.com/svg?repos=bhaskatripathi/pdfGPT&type=Date)](https://star-history.com/#bhaskatripathi/pdfGPT&Date)
 I am looking for more contributors from the open source community who can take up backlog items voluntarily and maintain the application jointly with me.
 
-## Also Try:
-This app creates schematic architecture diagrams, UML, flowcharts, Gantt charts and many more. You simple need to mention the usecase in natural language and it will create the desired diagram.
-https://github.com/bhaskatripathi/Text2Diagram
+## Also Try TypeTruth:
+TypeTruth detects whether a text is written by a human or AI. Ideal for fact-checking and content validation in the age of AI content generators.
+https://github.com/bhaskatripathi/TypeTruth
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE.txt](LICENSE.txt) file for details.
