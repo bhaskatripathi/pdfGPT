@@ -1,6 +1,9 @@
 # pdfGPT
 ## Demo
 1. **Demo URL**: https://bit.ly/41ZXBJM
+2. **Demo Video**:
+   
+   [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LzPgmmqpBk8/0.jpg)](https://www.youtube.com/watch?v=LzPgmmqpBk8)
 
 ### Problem Description : 
 1. When you pass a large text to Open AI, it suffers from a 4K token limit. It cannot take an entire pdf file as an input
