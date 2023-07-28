@@ -9,6 +9,13 @@
 2. PDF GPT now supports Turbo models and GPT4 including 16K and 32K token model.
 ![image](https://github.com/bhaskatripathi/pdfGPT/assets/35177508/6992ace8-1d95-4518-b25d-738cd0b5b37f)
 
+# Upcoming Release Pipeline:
+1. Support for Falcon, Vicuna, Meta Llama
+2. OCR Support
+3. Multiple PDF file support
+4. OCR Support
+5. Node.Js based Web Application - With no trial, no API fees. 100% Open source.
+    
 ### Problem Description : 
 1. When you pass a large text to Open AI, it suffers from a 4K token limit. It cannot take an entire pdf file as an input
 2. Open AI sometimes becomes overtly chatty and returns irrelevant response not directly related to your query. This is because Open AI uses poor embeddings.
