@@ -186,3 +186,15 @@ https://github.com/bhaskatripathi/TypeTruth
 ## License
 This project is licensed under the MIT License. See the [LICENSE.txt](LICENSE.txt) file for details.
 
+## Citation
+If you use PDF-GPT in your research or wish to refer to the examples in this repo, please cite with:
+
+```bibtex
+@misc{pdfgpt2023,
+  author = {Bhaskar Tripathi},
+  title = {PDF-GPT},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub Repository},
+  howpublished = {\url{https://github.com/bhaskatripathi/pdfGPT}}
+}
