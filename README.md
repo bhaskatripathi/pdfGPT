@@ -1,9 +1,14 @@
 # pdfGPT
 ## Demo
-1. **Demo URL**: https://bit.ly/41ZXBJM
+1. **Demo URL**: https://huggingface.co/spaces/bhaskartripathi/pdfGPT_Turbo
 2. **Demo Video**:
    
    [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LzPgmmqpBk8/0.jpg)](https://www.youtube.com/watch?v=LzPgmmqpBk8)
+####
+Version Updates (27 July, 2023):
+1. Improved error handling
+2. PDF GPT now supports Turbo models and GPT4 including 16K and 32K token model.
+![image](https://github.com/bhaskatripathi/pdfGPT/assets/35177508/6992ace8-1d95-4518-b25d-738cd0b5b37f)
 
 ### Problem Description : 
 1. When you pass a large text to Open AI, it suffers from a 4K token limit. It cannot take an entire pdf file as an input
