@@ -4,8 +4,7 @@
 2. **Demo Video**:
    
    [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LzPgmmqpBk8/0.jpg)](https://www.youtube.com/watch?v=LzPgmmqpBk8)
-####
-Version Updates (27 July, 2023):
+#### Version Updates (27 July, 2023):
 1. Improved error handling
 2. PDF GPT now supports Turbo models and GPT4 including 16K and 32K token model.
 ![image](https://github.com/bhaskatripathi/pdfGPT/assets/35177508/6992ace8-1d95-4518-b25d-738cd0b5b37f)
