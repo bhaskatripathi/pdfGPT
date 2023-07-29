@@ -7,7 +7,9 @@
 #### Version Updates (27 July, 2023):
 1. Improved error handling
 2. PDF GPT now supports Turbo models and GPT4 including 16K and 32K token model.
-![image](https://github.com/bhaskatripathi/pdfGPT/assets/35177508/6992ace8-1d95-4518-b25d-738cd0b5b37f)
+3. Pre-defined questions for auto-filling the input box.
+![image](https://github.com/bhaskatripathi/pdfGPT/assets/35177508/ab7a1e1c-e5cf-49ab-8111-bcc77c89b503)
+
 
 # Upcoming Release Pipeline:
 1. Support for Falcon, Vicuna, Meta Llama
