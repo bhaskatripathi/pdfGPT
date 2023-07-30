@@ -8,6 +8,7 @@
 1. Improved error handling
 2. PDF GPT now supports Turbo models and GPT4 including 16K and 32K token model.
 3. Pre-defined questions for auto-filling the input.
+4. Implemented Chat History feature.
 ![image](https://github.com/bhaskatripathi/pdfGPT/assets/35177508/ab7a1e1c-e5cf-49ab-8111-bcc77c89b503)
 
 
