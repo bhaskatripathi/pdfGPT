@@ -11,6 +11,8 @@
 4. Implemented Chat History feature.
 ![image](https://github.com/bhaskatripathi/pdfGPT/assets/35177508/ab7a1e1c-e5cf-49ab-8111-bcc77c89b503)
 
+### Note on model performance
+```If you find the response for a specific question in the PDF is not good using Turbo models, then you need to understand that Turbo models such as gpt-3.5-turbo are chat completion models and will not give a good response in some cases where the embedding similarity is low. Despite the claim by OpenAI, the turbo model is not the best model for Q&A. In those specific cases, either use the good old text-DaVinci-003 or use GPT4 and above. These models invariably give you the most relevant output.```
 
 # Upcoming Release Pipeline:
 1. Support for Falcon, Vicuna, Meta Llama
