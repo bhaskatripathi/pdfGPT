@@ -186,9 +186,9 @@ H -- Output --> I[Output]
 [![Star History Chart](https://api.star-history.com/svg?repos=bhaskatripathi/pdfGPT&type=Date)](https://star-history.com/#bhaskatripathi/pdfGPT&Date)
 I am looking for more contributors from the open source community who can take up backlog items voluntarily and maintain the application jointly with me.
 
-## Also Try TypeTruth:
-TypeTruth detects whether a text is written by a human or AI. Ideal for fact-checking and content validation in the age of AI content generators.
-https://github.com/bhaskatripathi/TypeTruth
+## Also Try Text2Diagram:
+Text2Diagram is an AI based diagramming tool that uses Natural language text to create diagrams. It uses medmaid.js to create sequence diagrams, Gantt chart, ER Diagrams, User Journeys, Class diagrams,Mindmaps, quadrantChart and Pie charts and many more.
+https://text2diagram.vercel.app/
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE.txt](LICENSE.txt) file for details.
