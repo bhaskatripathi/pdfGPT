@@ -4,6 +4,6 @@ scikit-learn==1.2.2
 tensorflow>=2.0.0
 tensorflow_hub==0.13.0
 openai==0.27.4
-gradio==3.34.0
+gradio==4.11.0
 langchain-serve>=0.0.19
 litellm
