@@ -186,9 +186,11 @@ H -- Output --> I[Output]
 [![Star History Chart](https://api.star-history.com/svg?repos=bhaskatripathi/pdfGPT&type=Date)](https://star-history.com/#bhaskatripathi/pdfGPT&Date)
 I am looking for more contributors from the open source community who can take up backlog items voluntarily and maintain the application jointly with me.
 
-## Also Try Text2Diagram:
-Text2Diagram is an AI based diagramming tool that uses Natural language text to create diagrams. It uses medmaid.js to create sequence diagrams, Gantt chart, ER Diagrams, User Journeys, Class diagrams,Mindmaps, quadrantChart and Pie charts and many more.
-https://text2diagram.vercel.app/
+## Also Try PyViralContent:
+Have you ever thought why your social media posts, blog, article, advertising, YouTube video, or other content don't go viral?
+I have published a new Python Package: pyviralcontent ! 🚀
+It predicts the virality of your content along with readability scores! It uses multiple sophisticated algorithms to calculate your content's readability score and its predict its viral probability using Multi Criteria Decision Analysis. 📈 Make your content strategy data-driven with pyviralcontent. Try it out and take your content's impact to the next level! 💥 
+https://github.com/bhaskatripathi/pyviralcontent
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE.txt](LICENSE.txt) file for details.
