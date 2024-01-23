@@ -187,7 +187,7 @@ H -- Output --> I[Output]
 I am looking for more contributors from the open source community who can take up backlog items voluntarily and maintain the application jointly with me.
 
 ## Also Try Text2Diagram:
-Text2Diagram is an AI based diagramming tool that uses Natural language text to create diagrams. It uses medmaid.js to create sequence diagrams, Gantt chart, ER Diagrams, User Journeys, Class diagrams,Mindmaps, quadrantChart and Pie charts and many more.
+Text2Diagram is an AI based diagramming tool that uses Natural language text to create diagrams. It uses [mermaid.js](https://github.com/mermaid-js/mermaid) to create sequence diagrams, Gantt chart, ER Diagrams, User Journeys, Class diagrams,Mindmaps, quadrantChart and Pie charts and many more.
 https://text2diagram.vercel.app/
 
 ## License
