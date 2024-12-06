@@ -187,10 +187,8 @@ H -- Output --> I[Output]
 I am looking for more contributors from the open source community who can take up backlog items voluntarily and maintain the application jointly with me.
 
 ## Also Try PyViralContent:
-Have you ever thought why your social media posts, blog, article, advertising, YouTube video, or other content don't go viral?
-I have published a new Python Package: pyviralcontent ! 🚀
-It predicts the virality of your content along with readability scores! It uses multiple sophisticated algorithms to calculate your content's readability score and its predict its viral probability using Multi Criteria Decision Analysis. 📈 Make your content strategy data-driven with pyviralcontent. Try it out and take your content's impact to the next level! 💥 
-https://github.com/bhaskatripathi/pyviralcontent
+This project, graphGita, is the first modern re-interpretation of the Bhagavad Gita that utilizes Knowledge Graphs for accurate query retrieval and qunatify philosphical aspects to serve specific problem-solution needs. The ambitious goal is to incorporate over 200 versions of Gita interpretations written from time-to-time by different past and present scholars and integrate them in form of a sophisticated Knowledge Graph aided with modern retrieval technologies such as Monte Carlo Tree Search, and KG-RAG to provide a seamless multi-modal experience (text, image and video) to users. My primary goal is to increase readers' comprehension of philosophical ideas while offering pertinent perspectives for modern readers. Based on the literature reviews of each of the 18 chapters and how they relate to one another, the text is formatted into a graph structure. This structure may grow more sophisticated and complex with due course of time as the project progresses. 🚀 💥 
+[https://github.com/bhaskatripathi/pyviralcontent](https://github.com/bhaskatripathi/graphGita)
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE.txt](LICENSE.txt) file for details.
