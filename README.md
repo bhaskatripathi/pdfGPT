@@ -186,7 +186,7 @@ H -- Output --> I[Output]
 [![Star History Chart](https://api.star-history.com/svg?repos=bhaskatripathi/pdfGPT&type=Date)](https://star-history.com/#bhaskatripathi/pdfGPT&Date)
 I am looking for more contributors from the open source community who can take up backlog items voluntarily and maintain the application jointly with me.
 
-## Also Try PyViralContent:
+## Also Try Knowledge Graph RAG Gita:
 This project, graphGita, is the first modern re-interpretation of the Bhagavad Gita that utilizes Knowledge Graphs for accurate query retrieval and qunatify philosphical aspects to serve specific problem-solution needs. The ambitious goal is to incorporate over 200 versions of Gita interpretations written from time-to-time by different past and present scholars and integrate them in form of a sophisticated Knowledge Graph aided with modern retrieval technologies such as Monte Carlo Tree Search, and KG-RAG to provide a seamless multi-modal experience (text, image and video) to users. My primary goal is to increase readers' comprehension of philosophical ideas while offering pertinent perspectives for modern readers. Based on the literature reviews of each of the 18 chapters and how they relate to one another, the text is formatted into a graph structure. This structure may grow more sophisticated and complex with due course of time as the project progresses. 🚀 💥 
 [https://github.com/bhaskatripathi/pyviralcontent](https://github.com/bhaskatripathi/graphGita)
 
