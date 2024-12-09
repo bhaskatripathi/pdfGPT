@@ -1,6 +1,6 @@
 # pdfGPT
 ## Demo
-1. **Demo URL**: https://bhaskartripathi-pdfgpt-turbo.hf.space
+1. **Demo URL**: https://huggingface.co/spaces/bhaskartripathi/pdfChatter
 2. **Demo Video**:
    
    [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LzPgmmqpBk8/0.jpg)](https://www.youtube.com/watch?v=LzPgmmqpBk8)
