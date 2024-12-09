@@ -4,6 +4,8 @@
 2. **Demo Video**:
    
    [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LzPgmmqpBk8/0.jpg)](https://www.youtube.com/watch?v=LzPgmmqpBk8)
+3. Despite so many fancy RAG solutions out there in Open Source and enterprise apps, pdfGPT is still the most accurate application that gives the most precise response. The first version was developed way back in 2021 as one of the world's earliest RAG open source solutions. To this day (Dec, 2024), it still remains one of the most accurate ones due to its very simple and unique architecture. It uses no third-party APIs such as langchain. It uses embeddings but no vectorDB, no indexing. But, it still doesn't compromise on the accuracy of response which is more critical than a fancy UI. The library documentation that you see below is a bit outdated as I do not get enough time to maintain it. However, if there is more demand then I am ready to put an enterprise grade RAG with more sophisticated retrieval tech available these days.
+   
 #### Version Updates (27 July, 2023):
 1. Improved error handling
 2. PDF GPT now supports Turbo models and GPT4 including 16K and 32K token model.
